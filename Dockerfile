@@ -7,7 +7,7 @@ LABEL Description="A container to use with development with eric6" Vendor="none"
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install libterm-readline-perl-perl -y
-RUN apt-get install -y eric sudo
+RUN apt-get install -y eric sudo libqt5sql5-psql python3-pip python3-psycopg2 git
 
 # PREP Developer User
 # Replace 1000 with your user / group id
