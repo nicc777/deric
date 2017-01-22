@@ -2,7 +2,19 @@
 
 This is a docker image, based on the `firefox` [docker image](http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/) from Fábio Rehm.
 
-## Installation
+# Quick start
+
+The following have been tested on Ubuntu 16.04. Eric6 needs to connect to an X-server - the exact launch command below may be different on other platforms.
+
+Assuming you have [docker](https://www.docker.com/) installed, run the following:
+
+	$ xhost +localhost && export DERIC_HOME=$HOME && docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $DERIC_HOME:/home/developer deric
+
+_*Note*_: If you have another "hack" to get it going on another platform, please let me know - I will happily include it.
+
+# The boring detail
+
+## Installation (self build)
 
 Get the docker file... Easiest way:
 
@@ -25,16 +37,16 @@ For example, using your home directory mapped to the image's developer home:
 Or, if you would like a dedicated area:
 
 	$ mkdir $HOME/Eric6
-    $ export DERIC_HOME=$HOME/Eric6
+  $ export DERIC_HOME=$HOME/Eric6
 
 ## Running deric
 
 To run, based on your preparation, use the following command:
 
 	$ xhost +
-    $ docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $DERIC_HOME:/home/developer deric
+  $ docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $DERIC_HOME:/home/developer deric
 
-## Adding python libraries and other stuff 
+## Adding python libraries and other stuff
 
 Sometimes you may need a terminal to install additional libraries or packages or just do some random stuff...
 
