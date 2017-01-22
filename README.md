@@ -8,7 +8,7 @@ The following have been tested on Ubuntu 16.04. Eric6 needs to connect to an X-s
 
 Assuming you have [docker](https://www.docker.com/) installed, run the following:
 
-	$ xhost +localhost && export DERIC_HOME=$HOME && docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $DERIC_HOME:/home/developer deric
+	$ xhost +localhost && export DERIC_HOME=$HOME && docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $DERIC_HOME:/home/developer nicc777/deric
 
 _*Note*_: If you have another "hack" to get it going on another platform, please let me know - I will happily include it.
 
